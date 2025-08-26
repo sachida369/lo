@@ -233,73 +233,70 @@
   </div>
 </section>
 
-<!-- Home Loan Offer Band -->
-<section class="bg-indigo-50">
-  <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-10 items-center">
-    <!-- Text Section -->
-    <div>
-      <h2 class="text-2xl font-bold text-gray-900">Dream Home Within Reach!</h2>
-      <p class="mt-3 text-gray-600">
-        Get instant approval for home loans with the lowest interest rates. Compare top banks, check your eligibility, and apply online in minutes with SmartLoanAdvisor.
-      </p>
-      <a href="#home-loan" class="mt-6 inline-block pill bg-indigo-600 text-white px-6 py-3 font-semibold rounded-lg shadow hover:bg-indigo-700">
-        Apply for Home Loan
-      </a>
-    </div>
-    <!-- Image Section -->
-    <div class="rounded-2xl shadow-inner flex items-center justify-center">
-      <img src="assets/home-loan-offer-instant-approval.webp" 
-           alt="Instant Home Loan Offer – Lowest Interest Rates with Fast Approval" 
-           class="max-w-full h-auto rounded-xl shadow-lg object-cover">
+<!-- Loan Offers Slider -->
+<section class="bg-gray-50 py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Top Loan Offers</h2>
+
+    <!-- Slider Container -->
+    <div class="relative overflow-hidden rounded-2xl shadow-lg">
+      <div id="loanSlider" class="flex transition-transform duration-500">
+        
+        <!-- Slide 1: Home Loan -->
+        <div class="min-w-full flex-shrink-0">
+          <img src="assets/home-loan-offer-instant-approval.webp" 
+               alt="Instant Home Loan Offer – Lowest Interest Rates with Fast Approval" 
+               class="w-full h-64 md:h-96 object-cover">
+        </div>
+
+        <!-- Slide 2: Used Car Loan -->
+        <div class="min-w-full flex-shrink-0">
+          <img src="assets/used-car-loan-150-percent-value.webp" 
+               alt="IDFC First Bank Used Car Loan – Get 150% of Car Value with Flexible EMI" 
+               class="w-full h-64 md:h-96 object-cover">
+        </div>
+
+        <!-- Slide 3: Business Loan -->
+        <div class="min-w-full flex-shrink-0">
+          <img src="assets/business-loan-fast-approval.webp" 
+               alt="Unsecured Business Loan up to ₹50 Lakh – Quick Approval and Flexible Repayment" 
+               class="w-full h-64 md:h-96 object-cover">
+        </div>
+      </div>
+
+      <!-- Prev / Next Buttons -->
+      <button onclick="prevSlide()" class="absolute top-1/2 left-3 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow hover:bg-white">‹</button>
+      <button onclick="nextSlide()" class="absolute top-1/2 right-3 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow hover:bg-white">›</button>
     </div>
   </div>
 </section>
 
+<script>
+  let currentIndex = 0;
+  const slider = document.getElementById('loanSlider');
+  const slides = slider.children.length;
 
-<!-- Used Car Loan Offer Band -->
-<section class="bg-yellow-50">
-  <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-10 items-center">
-    <!-- Text Section -->
-    <div>
-      <h3 class="text-2xl font-bold text-gray-900">Need Cash? Don’t Sell Your Car!</h3>
-      <p class="mt-2 text-gray-600">
-        IDFC First Bank brings you Used Car Loans where you can unlock up to <strong>150% of your car’s market value</strong>. Keep your car, get the money, and enjoy easy EMIs.
-      </p>
-      <a href="#used-car-loan" class="mt-6 inline-block pill bg-yellow-600 text-white px-6 py-3 font-semibold rounded-lg shadow hover:bg-yellow-700">
-        Check Car Loan Offers
-      </a>
-    </div>
-    <!-- Image Section -->
-    <div class="rounded-2xl shadow-inner flex items-center justify-center">
-      <img src="assets/used-car-loan-150-percent-value.webp" 
-           alt="IDFC First Bank Used Car Loan – Get 150% of Car Value with Flexible EMI" 
-           class="max-w-full h-auto rounded-xl shadow-lg object-cover">
-    </div>
-  </div>
-</section>
+  function showSlide(index) {
+    if (index < 0) index = slides - 1;
+    if (index >= slides) index = 0;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+    currentIndex = index;
+  }
 
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
 
-<!-- Business Loan Offer Band -->
-<section class="bg-green-50">
-  <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-10 items-center">
-    <!-- Text Section -->
-    <div>
-      <h3 class="text-2xl font-bold text-gray-900">Fuel Your Business Growth!</h3>
-      <p class="mt-2 text-gray-600">
-        Power your business with unsecured loans up to <strong>₹50 Lakh</strong>. Get quick approvals, minimal paperwork, and flexible repayment options designed for entrepreneurs.
-      </p>
-      <a href="#business-loan" class="mt-6 inline-block pill bg-green-600 text-white px-6 py-3 font-semibold rounded-lg shadow hover:bg-green-700">
-        Apply for Business Loan
-      </a>
-    </div>
-    <!-- Image Section -->
-    <div class="rounded-2xl shadow-inner flex items-center justify-center">
-      <img src="assets/business-loan-fast-approval.webp" 
-           alt="Unsecured Business Loan up to ₹50 Lakh – Quick Approval and Flexible Repayment" 
-           class="max-w-full h-auto rounded-xl shadow-lg object-cover">
-    </div>
-  </div>
-</section>
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  // Auto-slide every 5 sec
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+</script>
+
 
 
   <section class="bg-white">
