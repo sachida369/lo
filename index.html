@@ -233,68 +233,46 @@
   </div>
 </section>
 
-<!-- Loan Offers Slider -->
+<!-- Loan Offers Fade Carousel -->
 <section class="bg-gray-50 py-12">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Top Loan Offers</h2>
 
-    <!-- Slider Container -->
-    <div class="relative overflow-hidden rounded-2xl shadow-lg">
-      <div id="loanSlider" class="flex transition-transform duration-500">
-        
-        <!-- Slide 1: Home Loan -->
-        <div class="min-w-full flex-shrink-0">
-          <img src="assets/home-loan-offer-instant-approval.webp" 
-               alt="Instant Home Loan Offer – Lowest Interest Rates with Fast Approval" 
-               class="w-full h-64 md:h-96 object-cover">
-        </div>
+    <div class="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
+      
+      <!-- Images -->
+      <img src="assets/home-loan-offer-instant-approval.webp" 
+           alt="Instant Home Loan Offer – Lowest Interest Rates with Fast Approval"
+           class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-2000 ease-in-out loan-slide">
+      
+      <img src="assets/used-car-loan-150-percent-value.webp" 
+           alt="IDFC First Bank Used Car Loan – Get 150% of Car Value with Flexible EMI"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-2000 ease-in-out loan-slide">
+      
+      <img src="assets/business-loan-fast-approval.webp" 
+           alt="Unsecured Business Loan up to ₹50 Lakh – Quick Approval and Flexible Repayment"
+           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-2000 ease-in-out loan-slide">
 
-        <!-- Slide 2: Used Car Loan -->
-        <div class="min-w-full flex-shrink-0">
-          <img src="assets/used-car-loan-150-percent-value.webp" 
-               alt="IDFC First Bank Used Car Loan – Get 150% of Car Value with Flexible EMI" 
-               class="w-full h-64 md:h-96 object-cover">
-        </div>
-
-        <!-- Slide 3: Business Loan -->
-        <div class="min-w-full flex-shrink-0">
-          <img src="assets/business-loan-fast-approval.webp" 
-               alt="Unsecured Business Loan up to ₹50 Lakh – Quick Approval and Flexible Repayment" 
-               class="w-full h-64 md:h-96 object-cover">
-        </div>
-      </div>
-
-      <!-- Prev / Next Buttons -->
-      <button onclick="prevSlide()" class="absolute top-1/2 left-3 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow hover:bg-white">‹</button>
-      <button onclick="nextSlide()" class="absolute top-1/2 right-3 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow hover:bg-white">›</button>
     </div>
   </div>
 </section>
 
 <script>
-  let currentIndex = 0;
-  const slider = document.getElementById('loanSlider');
-  const slides = slider.children.length;
+  const slides = document.querySelectorAll('.loan-slide');
+  let current = 0;
 
-  function showSlide(index) {
-    if (index < 0) index = slides - 1;
-    if (index >= slides) index = 0;
-    slider.style.transform = `translateX(-${index * 100}%)`;
-    currentIndex = index;
+  function showNextSlide() {
+    slides[current].classList.remove('opacity-100');
+    slides[current].classList.add('opacity-0');
+
+    current = (current + 1) % slides.length;
+
+    slides[current].classList.remove('opacity-0');
+    slides[current].classList.add('opacity-100');
   }
 
-  function nextSlide() {
-    showSlide(currentIndex + 1);
-  }
-
-  function prevSlide() {
-    showSlide(currentIndex - 1);
-  }
-
-  // Auto-slide every 5 sec
-  setInterval(() => {
-    nextSlide();
-  }, 5000);
+  // Change every 2 seconds
+  setInterval(showNextSlide, 2000);
 </script>
 
 
