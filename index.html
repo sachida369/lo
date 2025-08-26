@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartLoanAdvisor — Compare Loans & Cards, Free Credit Score, EMI Calculator</title>
+  <meta name="description" content="SmartLoanAdvisor helps you compare loans and credit cards, check your credit score, and plan EMIs—fast, secure, and free." />
+  <meta name="keywords" content="loan comparison, credit cards, free credit score, EMI calculator, personal loan, home loan" />
+  <link rel="icon" href="logo.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SmartLoanAdvisor — Compare Loans & Cards" />
+  <meta property="og:description" content="Check your FREE credit score, compare loans, and plan EMIs." />
+  <meta property="og:image" content="logo.png" />
+
+  <!-- Tailwind CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Minimal custom styles -->
+  <style>
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.75); }
+    .btn-grad { background-image: linear-gradient(90deg,#2563eb 0%,#22c55e 100%); }
+    .btn-grad:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .pill { border-radius: 9999px; }
+    .sticky-shadow { box-shadow: 0 4px 18px rgba(0,0,0,.08); }
+    .phone-mock {
+      background: linear-gradient(180deg,#f9fafb,#eef2ff);
+      border-radius: 24px; border: 2px solid #e5e7eb;
+      height: 360px; width: 190px;
+      box-shadow: inset 0 0 0 10px #111827; position: relative;
+    }
+    .phone-notch {
+      position:absolute; top:-2px; left:50%; transform:translateX(-50%);
+      width:110px; height:18px; background:#111827; border-bottom-left-radius:10px; border-bottom-right-radius:10px;
+    }
+    .badge { font-size: .7rem; padding: .2rem .5rem; border-radius: 6px; background:#fef3c7; color:#92400e; font-weight:600;}
+    .mega a { color:#d1d5db }
+    .mega a:hover { color:#fff }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FinancialService",
+    "name":"SmartLoanAdvisor",
+    "url":"https://smartloanadvisor.shop",
+    "logo":"https://smartloanadvisor.shop/logo.png",
+    "description":"Compare loans & credit cards, check your credit score, and calculate EMIs.",
+    "sameAs":["https://facebook.com/","https://twitter.com/","https://www.linkedin.com/"]
+  }
+  </script>
+
+  <!-- Analytics placeholder -->
+  <script>/* add GA/Tag Manager here */</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Top bar -->
+  <div class="bg-blue-600 text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <span class="badge bg-yellow-300 text-blue-900">Get FREE Credit Score</span>
+        <span>Check eligibility without impacting score</span>
+      </div>
+      <div class="hidden sm:flex items-center space-x-4">
+        <a href="#" class="underline">Track Application</a>
+        <a href="#" class="underline">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header id="header" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a class="flex items-center space-x-2" href="index.html">
+        <img src="logo.png" alt="SmartLoanAdvisor" class="w-8 h-8 rounded" />
+        <span class="font-bold text-xl">SmartLoanAdvisor</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 font-medium">
+        <a href="#" class="hover:text-blue-600">CARDS</a>
+        <a href="#" class="hover:text-blue-600">LOANS</a>
+        <a href="#" class="hover:text-blue-600">INVESTMENTS</a>
+        <a href="calculators.html" class="hover:text-blue-600">CALCULATORS</a>
+        <a href="blog.html" class="hover:text-blue-600">LEARN</a>
+        <a href="contact.html" class="hover:text-blue-600">CONTACT</a>
+      </nav>
+      <button id="hamburger" class="md:hidden p-2 rounded border">☰</button>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <div class="grid gap-2 text-sm font-medium">
+        <a href="#" class="py-2 border-b">CARDS</a>
+        <a href="#" class="py-2 border-b">LOANS</a>
+        <a href="#" class="py-2 border-b">INVESTMENTS</a>
+        <a href="calculators.html" class="py-2 border-b">CALCULATORS</a>
+        <a href="blog.html" class="py-2 border-b">LEARN</a>
+        <a href="contact.html" class="py-2">CONTACT</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO: Free Credit Score + phones -->
+  <section class="bg-indigo-50">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10 items-center">
+      <!-- phones -->
+      <div class="grid grid-cols-3 gap-4 justify-items-center">
+        <div class="phone-mock"><span class="phone-notch"></span></div>
+        <div class="phone-mock transform translate-y-6"><span class="phone-notch"></span></div>
+        <div class="phone-mock"><span class="phone-notch"></span></div>
+      </div>
+      <!-- content -->
+      <div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-snug">
+          Get your latest <span class="text-blue-700">FREE Credit Report</span>
+        </h1>
+        <ul class="mt-4 space-y-2">
+          <li>✅ <strong>3 crore+</strong> users checked for FREE</li>
+          <li>✅ Improve chances of bank approval</li>
+        </ul>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#credit-score" class="btn-grad pill text-white px-6 py-3 font-semibold inline-block">Check your FREE Credit Score »</a>
+          <a href="#emi-tools" class="pill px-6 py-3 font-semibold inline-block border border-blue-600 text-blue-700">Use EMI Calculator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cards Row (Co-branded style) -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- card 1 -->
+        <article class="glass rounded-xl p-5 shadow">
+          <div class="text-xs mb-2"><span class="badge">Co-Branded Credit Card</span></div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-semibold">FinBooster: YES BANK — SLA Credit Card</h3>
+              <ul class="mt-2 text-sm space-y-1 text-gray-600">
+                <li>• 5x rewards on online spends</li>
+                <li>• No cap on reward points</li>
+              </ul>
+            </div>
+            <div class="w-16 h-10 bg-gray-200 rounded"></div>
+          </div>
+          <a href="#" class="mt-4 inline-block pill bg-blue-600 text-white px-4 py-2 font-semibold">Get Card</a>
+        </article>
+        <!-- card 2 -->
+        <article class="glass rounded-xl p-5 shadow">
+          <div class="text-xs mb-2"><span class="badge">Co-Branded Credit Card</span></div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-semibold">RBL Bank — SaveMax Credit Card</h3>
+              <ul class="mt-2 text-sm space-y-1 text-gray-600">
+                <li>• Save more on daily spends</li>
+                <li>• Earn up to 1,000 reward points</li>
+              </ul>
+            </div>
+            <div class="w-16 h-10 bg-gray-200 rounded"></div>
+          </div>
+          <a href="#" class="mt-4 inline-block pill bg-blue-600 text-white px-4 py-2 font-semibold">Get Card</a>
+        </article>
+        <!-- card 3 -->
+        <article class="glass rounded-xl p-5 shadow">
+          <div class="text-xs mb-2"><span class="badge bg-blue-100 text-blue-900">Featured Credit Card</span></div>
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-semibold">HSBC Visa Platinum Credit Card</h3>
+              <ul class="mt-2 text-sm space-y-1 text-gray-600">
+                <li>• No joining/annual fees</li>
+                <li>• Rewards on all spends</li>
+              </ul>
+            </div>
+            <div class="w-16 h-10 bg-gray-200 rounded"></div>
+          </div>
+          <a href="#" class="mt-4 inline-block pill bg-blue-600 text-white px-4 py-2 font-semibold">Get Card</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- “Level up” band -->
+  <section class="bg-purple-50">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-2xl font-bold">Level Up Your Credit Game!</h2>
+        <p class="mt-3 text-gray-600">Our smart tech uses your profile to show custom offers and approval odds—with zero score impact.</p>
+        <a href="#credit-score" class="mt-5 inline-block pill btn-grad text-white px-6 py-3 font-semibold">Sign Up / Log In</a>
+      </div>
+      <div class="w-full h-52 bg-indigo-100 rounded-2xl"></div>
+    </div>
+  </section>
+
+  <!-- Explore Now + App/QR + Privacy strip -->
+  <section class="bg-green-50">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h3 class="text-2xl font-bold">Finance Calculators & Tools</h3>
+        <p class="mt-2 text-gray-600">Get the expert edge to hit your financial goals—EMI, eligibility, and more.</p>
+        <a href="#emi-tools" class="mt-5 inline-block pill bg-blue-600 text-white px-6 py-3 font-semibold">Explore Now</a>
+      </div>
+      <div class="w-full h-56 rounded-2xl bg-green-100"></div>
+    </div>
+  </section>
+
+  <section class="bg-blue-50">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h3 class="text-2xl font-bold">Credit on the go, anytime, anywhere!</h3>
+        <p class="mt-2 text-gray-600">Download the app and join millions leveling up their finances.</p>
+        <div class="mt-4 flex items-center space-x-4">
+          <div class="w-24 h-24 bg-white border rounded grid place-content-center">QR</div>
+          <div class="space-x-3">
+            <span class="inline-block w-32 h-10 bg-black rounded"></span>
+            <span class="inline-block w-32 h-10 bg-black rounded"></span>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-56 rounded-2xl bg-blue-100"></div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 bg-green-500 rounded-full grid place-content-center text-white">✓</div>
+        <div>
+          <h4 class="font-semibold">Your Privacy, Our Priority</h4>
+          <p class="text-gray-600 text-sm">We’re ISO + PCI DSS aware; your data stays safe—no selling to outsiders.</p>
+        </div>
+      </div>
+      <a href="privacy.html" class="text-blue-700 font-semibold underline">Privacy Policy</a>
+    </div>
+  </section>
+
+  <!-- TOOLS: EMI (draggable sliders) + Credit Score (WhatsApp) -->
+  <section id="emi-tools" class="bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10">
+      <!-- EMI -->
+      <div class="bg-white rounded-2xl shadow p-6">
+        <h3 class="text-xl font-bold mb-5">EMI Calculator</h3>
+        <label class="block mb-1 font-medium">Loan Amount: <span id="amountDisplay">500000</span></label>
+        <input class="w-full" type="range" id="loanAmount" min="10000" max="3000000" value="500000" step="10000">
+        <label class="block mt-4 mb-1 font-medium">Interest Rate (%): <span id="rateDisplay">10.0</span></label>
+        <input class="w-full" type="range" id="interestRate" min="6" max="28" value="10" step="0.1">
+        <label class="block mt-4 mb-1 font-medium">Tenure (months): <span id="tenureDisplay">60</span></label>
+        <input class="w-full" type="range" id="loanTenure" min="6" max="360" value="60" step="6">
+        <div class="mt-6 grid sm:grid-cols-3 gap-3 text-center">
+          <div class="bg-blue-50 rounded p-3">
+            <div class="text-xs text-gray-500">Monthly EMI</div>
+            <div class="text-xl font-bold" id="emiResult">–</div>
+          </div>
+          <div class="bg-green-50 rounded p-3">
+            <div class="text-xs text-gray-500">Total Interest</div>
+            <div class="text-xl font-bold" id="interestResult">–</div>
+          </div>
+          <div class="bg-indigo-50 rounded p-3">
+            <div class="text-xs text-gray-500">Total Payment</div>
+            <div class="text-xl font-bold" id="totalResult">–</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Credit Score Checker -->
+      <div id="credit-score" class="bg-white rounded-2xl shadow p-6">
+        <h3 class="text-xl font-bold mb-5">Check Your Credit Score</h3>
+        <form id="creditScoreForm" class="grid gap-3">
+          <input class="border rounded px-3 py-2" type="text" placeholder="Name*" required />
+          <input class="border rounded px-3 py-2" type="tel" placeholder="Mobile* (10-digit)" maxlength="10" pattern="[0-9]{10}" required />
+          <input class="border rounded px-3 py-2" type="text" placeholder="PAN* (AAAAA9999A)" maxlength="10" required />
+          <label class="text-xs flex items-center space-x-2">
+            <input type="checkbox" required />
+            <span>I agree to be contacted about my application.</span>
+          </label>
+          <button class="pill btn-grad text-white px-6 py-3 font-semibold" type="submit">Check Now</button>
+          <p class="text-xs text-gray-500">Redirects to WhatsApp with your details pre-filled.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Offers -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <h2 class="text-2xl font-bold text-center mb-6">Featured Offers</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Offer cards -->
+        <div class="bg-white rounded-xl border p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold">HDFC Bank — Personal Loan</h3>
+          <p>Rate: 10.5% · Tenure: 60m</p>
+          <p class="text-sm text-gray-500 mb-4">Updated: 2025-08-26</p>
+          <a href="#" class="pill btn-grad text-white px-4 py-2 font-semibold inline-block">Apply Now</a>
+        </div>
+        <div class="bg-white rounded-xl border p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold">SBI — Home Loan</h3>
+          <p>Rate: 8.7% · Tenure: 360m</p>
+          <p class="text-sm text-gray-500 mb-4">Updated: 2025-08-26</p>
+          <a href="#" class="pill bg-indigo-600 text-white px-4 py-2 font-semibold inline-block">Apply Now</a>
+        </div>
+        <div class="bg-white rounded-xl border p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold">ICICI Bank — Business Loan</h3>
+          <p>Rate: 11.5% · Tenure: 84m</p>
+          <p class="text-sm text-gray-500 mb-4">Updated: 2025-08-26</p>
+          <a href="#" class="pill bg-pink-600 text-white px-4 py-2 font-semibold inline-block">Apply Now</a>
+        </div>
+        <div class="bg-white rounded-xl border p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold">IDFC FIRST — Car Loan</h3>
+          <p>Rate: 9.2% · Tenure: 84m</p>
+          <p class="text-sm text-gray-500 mb-4">Updated: 2025-08-26</p>
+          <a href="#" class="pill bg-blue-600 text-white px-4 py-2 font-semibold inline-block">Apply Now</a>
+        </div>
+        <div class="bg-white rounded-xl border p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold">Poonawalla Fincorp — Loan Against Property</h3>
+          <p>Rate: 10% · Tenure: 180m</p>
+          <p class="text-sm text-gray-500 mb-4">Updated: 2025-08-26</p>
+          <a href="#" class="pill bg-green-600 text-white px-4 py-2 font-semibold inline-block">Apply Now</a>
+        </div>
+        <div class="bg-white rounded-xl border p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold">Bajaj Finserv — Gold Loan</h3>
+          <p>Rate: 9.99% · Tenure: 36m</p>
+          <p class="text-sm text-gray-500 mb-4">Updated: 2025-08-26</p>
+          <a href="#" class="pill bg-teal-600 text-white px-4 py-2 font-semibold inline-block">Apply Now</a>
+        </div>
+        <div class="bg-white rounded-xl border p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold">Tata Capital — Education Loan</h3>
+          <p>Rate: 10.99% · Tenure: 120m</p>
+          <p class="text-sm text-gray-500 mb-4">Updated: 2025-08-26</p>
+          <a href="#" class="pill bg-purple-600 text-white px-4 py-2 font-semibold inline-block">Apply Now</a>
+        </div>
+        <div class="bg-white rounded-xl border p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold">HDFC Bank — Balance Transfer</h3>
+          <p>Rate: 8.5% · Tenure: 300m</p>
+          <p class="text-sm text-gray-500 mb-4">Updated: 2025-08-26</p>
+          <a href="#" class="pill bg-indigo-700 text-white px-4 py-2 font-semibold inline-block">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mega Footer (multi-column like screenshot) -->
+  <footer class="bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 pt-10 pb-6">
+      <div class="flex items-center space-x-6 pb-6 border-b border-gray-700 overflow-x-auto">
+        <div class="w-28 h-28 bg-gray-800 rounded grid place-content-center text-xs">Best App<br/>2019</div>
+        <div class="w-28 h-28 bg-gray-800 rounded grid place-content-center text-xs">Fintech<br/>Innovation</div>
+        <div class="w-28 h-28 bg-gray-800 rounded grid place-content-center text-xs">Best Banks</div>
+        <div class="w-28 h-28 bg-gray-800 rounded grid place-content-center text-xs">Best Website</div>
+      </div>
+
+      <div class="mega grid md:grid-cols-5 gap-8 py-8 text-sm">
+        <div>
+          <h4 class="text-white font-semibold mb-3">Credit Card</h4>
+          <ul class="space-y-2">
+            <li><a href="#">Compare Credit Cards</a></li>
+            <li><a href="#">Top 10 Credit Cards</a></li>
+            <li><a href="#">Lifetime Free Cards</a></li>
+            <li><a href="#">Co-Branded Cards</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Credit Score</h4>
+          <ul class="space-y-2">
+            <li><a href="#credit-score">Free Credit Score</a></li>
+            <li><a href="#">Experian / CIBIL</a></li>
+            <li><a href="#">How to Improve Score</a></li>
+            <li><a href="#">Monitor Credit Score</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Personal Loan</h4>
+          <ul class="space-y-2">
+            <li><a href="#">Compare Personal Loans</a></li>
+            <li><a href="#">Instant Loans</a></li>
+            <li><a href="#">Eligibility & Rates</a></li>
+            <li><a href="#">Documents Required</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Home Loan</h4>
+          <ul class="space-y-2">
+            <li><a href="#">Compare Home Loans</a></li>
+            <li><a href="#">Interest Rates</a></li>
+            <li><a href="#">Eligibility</a></li>
+            <li><a href="#">Balance Transfer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3">Calculator</h4>
+          <ul class="space-y-2">
+            <li><a href="#emi-tools">EMI Calculator</a></li>
+            <li><a href="#emi-tools">Home Loan EMI</a></li>
+            <li><a href="#emi-tools">Car Loan EMI</a></li>
+            <li><a href="#emi-tools">Eligibility Calculator</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 py-6 border-t border-gray-700">
+        <div>
+          <h5 class="text-white font-semibold mb-2">Mobile Apps</h5>
+          <div class="flex space-x-3">
+            <span class="inline-block w-36 h-12 bg-black rounded"></span>
+            <span class="inline-block w-36 h-12 bg-black rounded"></span>
+          </div>
+        </div>
+        <div>
+          <h5 class="text-white font-semibold mb-2">Contact Us</h5>
+          <p>support[at]smartloanadvisor[dot]com</p>
+        </div>
+        <div>
+          <h5 class="text-white font-semibold mb-2">Follow Us</h5>
+          <div class="flex space-x-4">
+            <span class="w-9 h-9 bg-gray-800 rounded grid place-content-center">in</span>
+            <span class="w-9 h-9 bg-gray-800 rounded grid place-content-center">f</span>
+            <span class="w-9 h-9 bg-gray-800 rounded grid place-content-center">x</span>
+            <span class="w-9 h-9 bg-gray-800 rounded grid place-content-center">▶</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-xs text-gray-400 border-t border-gray-700 pt-4 pb-8">
+        <p>Disclaimer: SmartLoanAdvisor is not a bank. All offers belong to their respective banks/NBFCs. Checking eligibility or credit score here does not impact your score.</p>
+        <p class="mt-2">© 2025 SmartLoanAdvisor.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // sticky header shadow on scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 4) header.classList.add('sticky','top-0','sticky-shadow');
+      else header.classList.remove('sticky','top-0','sticky-shadow');
+    });
+
+    // mobile menu
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+
+    // EMI calculator math
+    const loanAmount = document.getElementById("loanAmount");
+    const interestRate = document.getElementById("interestRate");
+    const loanTenure = document.getElementById("loanTenure");
+    const amountDisplay = document.getElementById("amountDisplay");
+    const rateDisplay = document.getElementById("rateDisplay");
+    const tenureDisplay = document.getElementById("tenureDisplay");
+    const emiResult = document.getElementById("emiResult");
+    const interestResult = document.getElementById("interestResult");
+    const totalResult = document.getElementById("totalResult");
+
+    function calcEMI(p, r, n){
+      const i = r/1200;
+      return p*i*Math.pow(1+i,n)/(Math.pow(1+i,n)-1);
+    }
+    function updateEMI(){
+      const p = +loanAmount.value;
+      const r = +interestRate.value;
+      const n = +loanTenure.value;
+      const emi = calcEMI(p,r,n);
+      const total = emi*n;
+      const interest = total - p;
+      emiResult.textContent = Math.round(emi).toLocaleString('en-IN');
+      totalResult.textContent = Math.round(total).toLocaleString('en-IN');
+      interestResult.textContent = Math.round(interest).toLocaleString('en-IN');
+      amountDisplay.textContent = p.toLocaleString('en-IN');
+      rateDisplay.textContent = r.toFixed(1);
+      tenureDisplay.textContent = n;
+    }
+    [loanAmount, interestRate, loanTenure].forEach(el => el.addEventListener('input', updateEMI));
+    updateEMI();
+
+    // WhatsApp redirect for credit score
+    document.getElementById('creditScoreForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = this.querySelector("input[placeholder='Name*']").value.trim();
+      const mobile = this.querySelector("input[placeholder='Mobile* (10-digit)']").value.trim();
+      const pan = this.querySelector("input[placeholder='PAN* (AAAAA9999A)']").value.trim().toUpperCase();
+      const msg = encodeURIComponent(`Hello, I want to check my credit score.\nName: ${name}\nMobile: ${mobile}\nPAN: ${pan}`);
+      const yourWhatsAppNumber = "919876543210"; // change to your business WA number
+      window.open(`https://wa.me/${yourWhatsAppNumber}?text=${msg}`, "_blank");
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
