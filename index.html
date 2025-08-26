@@ -233,48 +233,73 @@
   </div>
 </section>
 
-<!-- Loan Offers Fade Carousel -->
-<section class="bg-gray-50 py-12">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Top Loan Offers</h2>
-
-    <div class="relative w-full h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-      
-      <!-- Images -->
+<!-- Home Loan Offer Band -->
+<section class="bg-indigo-50">
+  <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-10 items-center">
+    <!-- Text Section -->
+    <div>
+      <h2 class="text-2xl font-bold text-gray-900">Dream Home Within Reach!</h2>
+      <p class="mt-3 text-gray-600">
+        Get instant approval for home loans with the lowest interest rates. Compare top banks, check your eligibility, and apply online in minutes with SmartLoanAdvisor.
+      </p>
+      <a href="#home-loan" class="mt-6 inline-block pill bg-indigo-600 text-white px-6 py-3 font-semibold rounded-lg shadow hover:bg-indigo-700">
+        Apply for Home Loan
+      </a>
+    </div>
+    <!-- Image Section -->
+    <div class="rounded-2xl shadow-inner flex items-center justify-center">
       <img src="assets/home-loan-offer-instant-approval.webp" 
-           alt="Instant Home Loan Offer – Lowest Interest Rates with Fast Approval"
-           class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-2000 ease-in-out loan-slide">
-      
-      <img src="assets/used-car-loan-150-percent-value.webp" 
-           alt="IDFC First Bank Used Car Loan – Get 150% of Car Value with Flexible EMI"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-2000 ease-in-out loan-slide">
-      
-      <img src="assets/business-loan-fast-approval.webp" 
-           alt="Unsecured Business Loan up to ₹50 Lakh – Quick Approval and Flexible Repayment"
-           class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-2000 ease-in-out loan-slide">
-
+           alt="Instant Home Loan Offer – Lowest Interest Rates with Fast Approval" 
+           class="max-w-full h-auto rounded-xl shadow-lg object-cover">
     </div>
   </div>
 </section>
 
-<script>
-  const slides = document.querySelectorAll('.loan-slide');
-  let current = 0;
 
-  function showNextSlide() {
-    slides[current].classList.remove('opacity-100');
-    slides[current].classList.add('opacity-0');
+<!-- Used Car Loan Offer Band -->
+<section class="bg-yellow-50">
+  <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-10 items-center">
+    <!-- Text Section -->
+    <div>
+      <h3 class="text-2xl font-bold text-gray-900">Need Cash? Don’t Sell Your Car!</h3>
+      <p class="mt-2 text-gray-600">
+        IDFC First Bank brings you Used Car Loans where you can unlock up to <strong>150% of your car’s market value</strong>. Keep your car, get the money, and enjoy easy EMIs.
+      </p>
+      <a href="#used-car-loan" class="mt-6 inline-block pill bg-yellow-600 text-white px-6 py-3 font-semibold rounded-lg shadow hover:bg-yellow-700">
+        Check Car Loan Offers
+      </a>
+    </div>
+    <!-- Image Section -->
+    <div class="rounded-2xl shadow-inner flex items-center justify-center">
+      <img src="assets/used-car-loan-150-percent-value.webp" 
+           alt="IDFC First Bank Used Car Loan – Get 150% of Car Value with Flexible EMI" 
+           class="max-w-full h-auto rounded-xl shadow-lg object-cover">
+    </div>
+  </div>
+</section>
 
-    current = (current + 1) % slides.length;
 
-    slides[current].classList.remove('opacity-0');
-    slides[current].classList.add('opacity-100');
-  }
-
-  // Change every 2 seconds
-  setInterval(showNextSlide, 2000);
-</script>
-
+<!-- Business Loan Offer Band -->
+<section class="bg-green-50">
+  <div class="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-10 items-center">
+    <!-- Text Section -->
+    <div>
+      <h3 class="text-2xl font-bold text-gray-900">Fuel Your Business Growth!</h3>
+      <p class="mt-2 text-gray-600">
+        Power your business with unsecured loans up to <strong>₹50 Lakh</strong>. Get quick approvals, minimal paperwork, and flexible repayment options designed for entrepreneurs.
+      </p>
+      <a href="#business-loan" class="mt-6 inline-block pill bg-green-600 text-white px-6 py-3 font-semibold rounded-lg shadow hover:bg-green-700">
+        Apply for Business Loan
+      </a>
+    </div>
+    <!-- Image Section -->
+    <div class="rounded-2xl shadow-inner flex items-center justify-center">
+      <img src="assets/business-loan-fast-approval.webp" 
+           alt="Unsecured Business Loan up to ₹50 Lakh – Quick Approval and Flexible Repayment" 
+           class="max-w-full h-auto rounded-xl shadow-lg object-cover">
+    </div>
+  </div>
+</section>
 
 
   <section class="bg-white">
