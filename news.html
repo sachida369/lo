@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>News - Smart Loan Advisor | Latest Financial News & Updates</title>
+  <meta name="description" content="Stay updated with the latest news on interest rates, loan policies, and financial regulations. Get insights on market trends affecting loans.">
+  <link rel="canonical" href="https://smartloanadvisor.shop/news.html">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root{--brand:#0b5cff;--accent:#0b72ff;--muted:#6b7280;--maxw:1200px;--light-bg:#f8fafc;--border:#e2e8f0}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.45;margin:0;color:#0f1724;background:#fff}
+    
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    
+    /* Header Styles */
+    header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+    .header-content{display:flex;align-items:center;justify-content:space-between;padding:14px 0;max-width:var(--maxw);margin:0 auto;padding:14px 24px}
+    
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px}
+    .logo-text{font-weight:800;color:#0f1724}
+    .logo-subtitle{font-size:13px;color:var(--muted)}
+
+    /* Navigation Styles */
+    .nav{list-style:none;margin:0;padding:0;display:flex;gap:24px}
+    .nav li a{color:var(--muted);text-decoration:none;font-weight:600;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:6px;transition:all 0.2s ease}
+    .nav li a:hover{color:var(--brand);background:rgba(11,92,255,0.05)}
+    .nav li a.active{color:var(--brand);background:rgba(11,92,255,0.05)}
+    .nav li a i{font-size:14px}
+
+    .menu-toggle{display:none;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer}
+
+    /* Page Header */
+    .page-header{background:linear-gradient(135deg,#dc2626,#ef4444);color:white;padding:60px 0;text-align:center}
+    .page-header h1{font-size:36px;margin:0 0 16px;font-weight:800}
+    .page-header p{font-size:18px;margin:0;opacity:0.9}
+
+    /* Main Content */
+    .main-content{padding:40px 0}
+    .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:32px;margin-top:32px}
+    
+    .news-card{background:#fff;border-radius:12px;border:1px solid var(--border);overflow:hidden;transition:all 0.2s ease}
+    .news-card:hover{box-shadow:0 8px 25px rgba(220,38,38,0.08);transform:translateY(-2px)}
+    .news-card-content{padding:24px}
+    .news-card h3{margin:0 0 12px;font-size:20px;font-weight:700}
+    .news-card p{margin:0 0 16px;color:var(--muted);font-size:14px;line-height:1.6}
+    .news-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--muted);margin-bottom:16px}
+    .breaking-badge{background:#dc2626;color:white;padding:4px 8px;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase}
+    .category-badge{background:var(--light-bg);color:var(--muted);padding:4px 8px;border-radius:4px;font-size:11px;font-weight:600}
+
+    /* Categories */
+    .categories{display:flex;gap:12px;margin-bottom:32px;flex-wrap:wrap}
+    .category-tag{background:var(--light-bg);color:var(--muted);padding:8px 16px;border-radius:20px;text-decoration:none;font-size:14px;font-weight:600;border:1px solid var(--border);transition:all 0.2s ease}
+    .category-tag:hover{background:#dc2626;color:white;border-color:#dc2626}
+    .category-tag.active{background:#dc2626;color:white;border-color:#dc2626}
+
+    /* Footer */
+    footer{background:#1e293b;color:#94a3b8;padding:32px 0;margin-top:60px}
+    .footer-content{display:grid;grid-template-columns:2fr 1fr;gap:40px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{color:#94a3b8;text-decoration:none}
+    .footer-links a:hover{color:#fff}
+
+    /* Floating chat */
+    .chat-fab{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 8px 20px rgba(11,92,255,0.25);cursor:pointer;border:0;text-decoration:none;z-index:1000}
+    .chat-fab:hover{transform:scale(1.1)}
+
+    /* Responsive */
+    @media (max-width:768px){
+      .header-content{padding:14px 16px}
+      .container{padding:0 16px}
+      .menu-toggle{display:block}
+      .nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:16px;flex-direction:column;gap:8px;box-shadow:0 4px 6px rgba(0,0,0,0.1)}
+      .nav.active{display:flex}
+      .nav li a{padding:12px 16px}
+      .page-header h1{font-size:28px}
+      .news-grid{grid-template-columns:1fr}
+      .footer-content{grid-template-columns:1fr;text-align:center}
+      .categories{justify-content:center}
+    }
+
+    /* Empty state */
+    .empty-state{text-align:center;padding:80px 20px;color:var(--muted)}
+    .empty-state i{font-size:48px;margin-bottom:20px;color:var(--border)}
+    .empty-state h3{margin:0 0 12px;color:#0f1724}
+    .empty-state p{margin:0 0 24px}
+    .empty-state .btn{background:#dc2626;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <div class="mark">SL</div>
+        <div>
+          <div class="logo-text">Smart Loan Advisor</div>
+          <div class="logo-subtitle">Fast loan quotes & expert help</div>
+        </div>
+      </div>
+      
+      <nav aria-label="Primary navigation">
+        <ul class="nav" id="mainNav">
+          <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+          <li><a href="blog.html"><i class="fa fa-blog"></i> Blog</a></li>
+          <li><a href="news.html" class="active"><i class="fa fa-newspaper"></i> News</a></li>
+          <li><a href="privacy.html"><i class="fa fa-shield-alt"></i> Privacy</a></li>
+          <li><a href="terms.html"><i class="fa fa-file-alt"></i> Terms</a></li>
+          <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+        </ul>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1><i class="fa fa-newspaper" style="margin-right:16px"></i>Financial News & Updates</h1>
+      <p>Stay informed with the latest developments in banking, loans, and financial regulations</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <main class="main-content">
+      <div class="categories">
+        <a href="#" class="category-tag active">All News</a>
+        <a href="#" class="category-tag">Interest Rates</a>
+        <a href="#" class="category-tag">Policy Updates</a>
+        <a href="#" class="category-tag">Banking News</a>
+        <a href="#" class="category-tag">Market Trends</a>
+        <a href="#" class="category-tag">Regulatory Changes</a>
+      </div>
+
+      <div class="empty-state">
+        <i class="fa fa-newspaper"></i>
+        <h3>News Section Coming Soon</h3>
+        <p>We're setting up our news feed to bring you the latest updates on interest rates, policy changes,<br>and important financial news that affects your loan decisions.</p>
+        <a href="contact.html" class="btn">
+          <i class="fa fa-bell"></i> Get Notified
+        </a>
+      </div>
+
+      <!-- Example news structure for future content -->
+      <div class="news-grid" style="display:none">
+        <article class="news-card">
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span class="breaking-badge">Breaking</span>
+              <span><i class="fa fa-calendar"></i> 2 hours ago</span>
+              <span class="category-badge">Interest Rates</span>
+            </div>
+            <h3>RBI Announces New Interest Rate Policy: What It Means for Borrowers</h3>
+            <p>The Reserve Bank of India has announced a 25 basis point reduction in repo rates, which could impact loan interest rates across major banks...</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span><i class="fa fa-calendar"></i> 1 day ago</span>
+              <span class="category-badge">Banking News</span>
+            </div>
+            <h3>Top Banks Launch New Digital Loan Approval Process</h3>
+            <p>Leading banks have introduced AI-powered loan approval systems that promise faster processing times and improved customer experience...</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-card-content">
+            <div class="news-meta">
+              <span><i class="fa fa-calendar"></i> 3 days ago</span>
+              <span class="category-badge">Policy Updates</span>
+            </div>
+            <h3>New Guidelines for Personal Loan Eligibility Criteria</h3>
+            <p>Financial regulators have updated the eligibility criteria for personal loans, focusing on improved credit assessment mechanisms...</p>
+          </div>
+        </article>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <div style="margin-bottom:16px">
+          <div style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px">Smart Loan Advisor</div>
+          <p style="margin:0;color:#94a3b8">Your trusted partner for loan comparisons and financial advice.</p>
+        </div>
+        <div style="margin-bottom:16px">
+          <p style="margin:0;color:#94a3b8">
+            <i class="fa fa-phone" style="margin-right:8px"></i>
+            <a href="tel:+919910710219" style="color:#94a3b8;text-decoration:none">+91 99107 10219</a>
+          </p>
+          <p style="margin:0;color:#94a3b8">
+            <i class="fa fa-envelope" style="margin-right:8px"></i>
+            <a href="mailto:blogslogdekho@gmail.com" style="color:#94a3b8;text-decoration:none">blogslogdekho@gmail.com</a>
+          </p>
+        </div>
+        <p style="margin:0;font-size:14px">&copy; <span id="year"></span> Smart Loan Advisor. All rights reserved.</p>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <a class="chat-fab" title="Chat on WhatsApp" href="https://wa.me/919910710219" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp" style="font-size:24px"></i>
+  </a>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function toggleMenu() {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('active');
+    }
+
+    document.addEventListener('click', function(e) {
+      const nav = document.getElementById('mainNav');
+      const toggle = document.querySelector('.menu-toggle');
+      
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
